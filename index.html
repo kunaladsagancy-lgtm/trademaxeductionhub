@@ -1,257 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anand Srinivasan Official</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRADEMAX ACADEMY OFFICIAL</title>
 
-        body {
-            background-color: #050a05;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            background-image: linear-gradient(rgba(51, 255, 51, 0.05) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(51, 255, 51, 0.05) 1px, transparent 1px);
-            background-size: 30px 30px;
-            overflow-x: hidden;
-        }
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1008553591791028');
+fbq('track', 'PageView');
+</script>
 
-        /* Top Ticker */
-        .ticker-wrap {
-            width: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            border-bottom: 1px solid rgba(51, 255, 51, 0.3);
-            padding: 12px 0;
-            overflow: hidden;
-            position: fixed;
-            top: 0;
-            z-index: 100;
-        }
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1008553591791028&ev=PageView&noscript=1"/>
+</noscript>
 
-        .ticker {
-            display: inline-block;
-            white-space: nowrap;
-            color: #33ff33;
-            font-size: 12px;
-            font-weight: 600;
-            animation: marquee 25s linear infinite;
-        }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  text-align: center;
+}
 
-        @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+.card {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
 
-        .main-content {
-            margin-top: 100px;
-            text-align: center;
-            width: 90%;
-            max-width: 420px;
-            z-index: 10;
-        }
+.logo {
+  width: 100px;
+  border-radius: 50%;
+}
 
-        .channel-label {
-            background: rgba(51, 255, 51, 0.1);
-            color: #33ff33;
-            border: 1px solid rgba(51, 255, 51, 0.4);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 11px;
-            display: inline-block;
-            margin-bottom: 25px;
-        }
+h2 {
+  margin: 10px 0;
+}
 
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px; /* Name lamba hai isliye font size thoda chota kiya taaki screen par sahi dikhe */
-            line-height: 1.2;
-            margin-bottom: 5px;
-            word-wrap: break-word;
-        }
+.subs {
+  color: gray;
+}
 
-        .sub-title {
-            color: #33ff33;
-            font-size: 14px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
+.btn {
+  display: block;
+  background: #2a8cff;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 15px 0;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-        /* Moving Scan Line */
-        .scan-line-container {
-            width: 100%;
-            height: 60px;
-            position: relative;
-            margin: 10px 0;
-            overflow: hidden;
-        }
+.tags span {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 20px;
+  margin: 5px;
+  color: white;
+  font-size: 12px;
+}
 
-        .moving-line {
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #33ff33, transparent);
-            box-shadow: 0 0 15px #33ff33, 0 0 5px #fff;
-            position: absolute;
-            animation: moveUpDown 3s ease-in-out infinite;
-        }
+.red {background: red;}
+.black {background: #222;}
+.green {background: green;}
 
-        @keyframes moveUpDown {
-            0% { top: 0; opacity: 0; }
-            50% { top: 30px; opacity: 1; }
-            100% { top: 60px; opacity: 0; }
-        }
+.footer {
+  color: gray;
+  font-size: 14px;
+  margin-top: 15px;
+}
 
-        .description {
-            color: #aaa;
-            font-size: 14px;
-            line-height: 1.5;
-            margin: 20px 0 30px;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .stat-box {
-            background: #000;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 10px 5px;
-            border-radius: 8px;
-            font-size: 11px;
-            color: #eee;
-        }
-
-        .up { color: #33ff33; font-weight: bold; }
-        .down { color: #ff4444; font-weight: bold; }
-
-        /* Tags */
-        .tags-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 40px;
-        }
-
-        .tag {
-            background: #111;
-            border: 1px solid rgba(51, 255, 51, 0.2);
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-        }
-
-        /* Telegram Button */
-        .join-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            background: #33ff33;
-            color: #000;
-            text-decoration: none;
-            padding: 20px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 20px;
-            text-transform: uppercase;
-            box-shadow: 0 0 25px rgba(51, 255, 51, 0.6);
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 15px rgba(51, 255, 51, 0.5); }
-            50% { transform: scale(1.02); box-shadow: 0 0 35px rgba(51, 255, 51, 0.9); }
-            100% { transform: scale(1); box-shadow: 0 0 15px rgba(51, 255, 51, 0.5); }
-        }
-
-        .footer-text {
-            margin-top: 20px;
-            font-size: 11px;
-            color: #444;
-        }
-
-        /* Kunal Ads Section */
-        .ads-promo {
-            margin-top: 25px;
-            padding: 10px;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .ads-text { color: #ffffff; opacity: 0.9; }
-
-        .brand-name {
-            color: #00d2ff;
-            font-weight: 700;
-            text-decoration: underline;
-            margin-left: 5px;
-            text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
-        }
-
-        .ads-promo:hover .brand-name {
-            color: #fff;
-            text-shadow: 0 0 20px #00d2ff;
-        }
-    </style>
+.dm {
+  margin-top: 15px;
+  font-size: 14px;
+}
+</style>
 </head>
+
 <body>
 
-    <div class="ticker-wrap">
-        <div class="ticker">
-            FREE CHANNEL • TELUGU COMMUNITY • DAILY ALERTS • @ANAND_SRINIVASAN_OFFICIAL • NIFTY CALLS • BANKNIFTY • 
-        </div>
-    </div>
+<div class="card">
 
-    <div class="main-content">
-        <div class="channel-label">● TELEGRAM CHANNEL · FREE</div>
-        
-        <h1>@Anand_Srinivasan_official</h1>
-        <div class="sub-title">Official Trader™</div>
+<!-- ✅ LOGO FIXED -->
+<img src="logo.png" class="logo">
 
-        <div class="scan-line-container">
-            <div class="moving-line"></div>
-        </div>
+<h2>TRADEMAX ACADEMY OFFICIAL ✔️</h2>
+<p class="subs">78,127 subscribers</p>
 
-        <div class="description">
-            Expert stock & options calls for the Telugu community — NIFTY, BANKNIFTY & intraday tips, daily on Telegram.
-        </div>
+<p>📊 Exclusive insights & daily tips</p>
 
-        <div class="stats-grid">
-            <div class="stat-box">NIFTY <span class="up">23,842 ▲</span></div>
-            <div class="stat-box">BANKNIFTY <span class="up">51,204 ▲</span></div>
-            <div class="stat-box">SENSEX <span class="down">78,502 ▼</span></div>
-        </div>
+<a href="https://t.me/+SkFMhzxKRso2NDhl" 
+   class="btn" 
+   onclick="fbq('track','Lead')">
+JOIN TELEGRAM CHANNEL
+</a>
 
-        <div class="tags-container">
-            <div class="tag">📈 Intraday</div>
-            <div class="tag">🎯 Options</div>
-            <div class="tag">💹 Swing</div>
-            <div class="tag">⚡ Alerts</div>
-        </div>
+<p>🔥 INTRADAY | OPTIONS | SWING ANALYSIS</p>
+<p>📈 High Accuracy Signals | Real-Time Updates</p>
 
-        <a href="https://t.me/+XTZpHxU_5MdmODk1" class="join-btn">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" width="28">
-            JOIN FREE ON TELEGRAM
-        </a>
+<div class="tags">
+  <span class="red">NIFTY 50</span>
+  <span class="red">BANKNIFTY</span>
+  <span class="black">INTRADAY</span>
+  <span class="black">OPTIONS</span>
+  <span class="green">SWING TRADE</span>
+</div>
 
-        <div class="footer-text">
-            Market live · Members active · Trade responsibly
-        </div>
+<p style="color:green;">✅ Learn, Analyse & Grow</p>
 
-        <a href="https://t.me/+XTZpHxU_5MdmODk1" class="ads-promo">
-            <span class="ads-text">Meta ads setup k liye dm kro</span>
-            <span class="brand-name">Kunal Ads</span>
-        </a>
-    </div>
+<a href="https://t.me/+SkFMhzxKRso2NDhl" 
+   class="btn" 
+   onclick="fbq('track','Lead')">
+JOIN FREE TELEGRAM CHANNEL
+</a>
+
+<div class="dm">
+👉 Meta Ads Setup ke liye DM karo  
+<br>
+<a href="https://t.me/+x9h4Eecy_FBlYzFl">
+Click Here to Message
+</a>
+</div>
+
+<p class="footer">
+If you have Telegram, you can join instantly.
+</p>
+
+</div>
 
 </body>
 </html>
